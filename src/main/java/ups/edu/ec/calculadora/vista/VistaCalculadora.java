@@ -370,8 +370,12 @@ public class VistaCalculadora extends javax.swing.JFrame {
             numeroUno = numeroUno * numeroDos;
             lblResultado.setText(String.valueOf(numeroUno));
         } else if (signo.compareTo("/") == 0) {
-            numeroUno = numeroUno / numeroDos;
-            lblResultado.setText(String.valueOf(numeroUno));
+            if (numeroDos == 0) {
+                lblResultado.setText("No se puede dividir para 0, ngrese otro numero.");
+            } else {
+                numeroUno = numeroUno / numeroDos;
+                lblResultado.setText(String.valueOf(numeroUno));
+            }
         }
     }//GEN-LAST:event_btnIgualActionPerformed
 
