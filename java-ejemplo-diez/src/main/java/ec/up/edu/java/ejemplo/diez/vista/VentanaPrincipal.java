@@ -4,6 +4,8 @@
  */
 package ec.up.edu.java.ejemplo.diez.vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ESTUDIANTE
@@ -47,7 +49,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         MenuBuscarTelefono = new javax.swing.JMenuItem();
         MenuEliminarTelefono = new javax.swing.JMenuItem();
         MenuListarTelefono = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        menuOpciones = new javax.swing.JMenu();
+        menuOpcionesSalir = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -133,17 +136,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         menuBar.add(menuTelefono);
 
-        jMenu1.setText("Salir");
-        jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
+        menuOpciones.setText("Opciones");
+        menuOpciones.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
             public void menuDeselected(javax.swing.event.MenuEvent evt) {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu1MenuSelected(evt);
+                menuOpcionesMenuSelected(evt);
             }
         });
-        menuBar.add(jMenu1);
+
+        menuOpcionesSalir.setText("Salir");
+        menuOpcionesSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuOpcionesSalirActionPerformed(evt);
+            }
+        });
+        menuOpciones.add(menuOpcionesSalir);
+
+        menuBar.add(menuOpciones);
 
         setJMenuBar(menuBar);
 
@@ -163,16 +175,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void menuCrearPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearPersonaActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"Hola");
+        
     }//GEN-LAST:event_menuCrearPersonaActionPerformed
 
     private void menuListarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListarPersonaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuListarPersonaActionPerformed
 
-    private void jMenu1MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu1MenuSelected
+    private void menuOpcionesMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_menuOpcionesMenuSelected
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuOpcionesMenuSelected
+
+    private void menuOpcionesSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuOpcionesSalirActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jMenu1MenuSelected
+    }//GEN-LAST:event_menuOpcionesSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,7 +235,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu MenuOperadora;
     private javax.swing.JMenu MenuPersona;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem menuActualizarOperadora;
     private javax.swing.JMenuItem menuActualizarPersona;
@@ -231,6 +248,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuElimnarOperadora;
     private javax.swing.JMenuItem menuListarOperadora;
     private javax.swing.JMenuItem menuListarPersona;
+    private javax.swing.JMenu menuOpciones;
+    private javax.swing.JMenuItem menuOpcionesSalir;
     private javax.swing.JMenu menuTelefono;
     // End of variables declaration//GEN-END:variables
 
