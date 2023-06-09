@@ -12,11 +12,15 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private VentanCrearPersona ventanaCrearPerson;
+
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
+        this.ventanaCrearPerson = new VentanCrearPersona();
+        desktopPane.add(ventanaCrearPerson);
     }
 
     /**
@@ -58,6 +62,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         MenuPersona.setMnemonic('f');
         MenuPersona.setText("Persona");
+        MenuPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuPersonaActionPerformed(evt);
+            }
+        });
 
         menuCrearPersona.setMnemonic('o');
         menuCrearPersona.setText("Crear");
@@ -163,20 +172,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuCrearPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearPersonaActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"Hola");
-        
+        if (ventanaCrearPerson == null) {
+            ventanaCrearPerson.setVisible(true);
+            this.ventanaCrearPerson = new VentanCrearPersona();
+            desktopPane.add(ventanaCrearPerson);
+        }
+        ventanaCrearPerson.setVisible(true);
     }//GEN-LAST:event_menuCrearPersonaActionPerformed
 
     private void menuListarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListarPersonaActionPerformed
@@ -191,6 +203,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_menuOpcionesSalirActionPerformed
+
+    private void MenuPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuPersonaActionPerformed
 
     /**
      * @param args the command line arguments
